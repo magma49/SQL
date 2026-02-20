@@ -1,0 +1,10 @@
+SELECT
+    `BOOK_ID`,
+    `PUBLISHED_DATE`
+FROM
+    book
+WHERE
+    `CATEGORY` = '인문'
+    AND YEAR (`PUBLISHED_DATE`) = 2021
+ORDER BY
+    `PUBLISHED_DATE`;
