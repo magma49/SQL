@@ -1,0 +1,7 @@
+SELECT
+    `FLAVOR`
+FROM
+    first_half
+ORDER BY
+    `TOTAL_ORDER` DESC,
+    `SHIPMENT_ID`;
