@@ -1,6 +1,6 @@
 SELECT
-    `PT_NO`,
     `PT_NAME`,
+    `PT_NO`,
     `GEND_CD`,
     `AGE`,
     IFNULL (`TLNO`, 'NONE') as `TLNO`
