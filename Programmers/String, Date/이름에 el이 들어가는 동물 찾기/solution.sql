@@ -1,0 +1,9 @@
+SELECT
+    ANIMAL_ID,
+    NAME
+FROM
+    ANIMAL_INS
+WHERE
+    LOWER(NAME) LIKE '%el%'
+ORDER BY
+    NAME;
