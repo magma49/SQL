@@ -1,15 +1,10 @@
 SELECT
-    ANIMAL_ID,
-    NAME
+    O.ANIMAL_ID,
+    O.NAME
 FROM
-    ANIMAL_OUTS
+    ANIMAL_OUTS O
+    LEFT JOIN ANIMAL_INS I ON O.ANIMAL_ID = I.ANIMAL_ID
 WHERE
-    ANIMAL_ID NOT IN (
-        SELECT
-            ANIMAL_ID
-        FROM
-            ANIMAL_INS
-    )
+    I.ANIMAL_ID IS NULL -- 💡 핵심: INS 테이블에 매칭되는 ID가 없는(NULL인) 데이터만 필터링!
 ORDER BY
-    ANIMAL_ID,
-    NAME;
+    O.ANIMAL_ID;
