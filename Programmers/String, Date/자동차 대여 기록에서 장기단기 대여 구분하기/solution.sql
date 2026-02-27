@@ -4,7 +4,7 @@ SELECT
     DATE_FORMAT(START_DATE, '%Y-%m-%d') START_DATE,
     DATE_FORMAT(END_DATE, '%Y-%m-%d') END_DATE,
     IF(
-        DATEDIFF(END_DATE, START_DATE) >= 30,
+        DATEDIFF(END_DATE, START_DATE) >= 29,
         '장기 대여',
         '단기 대여'
     ) RENT_TYPE
