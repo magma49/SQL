@@ -5,5 +5,6 @@ FROM
     ANIMAL_INS
 WHERE
     LOWER(NAME) LIKE '%el%'
+    AND ANIMAL_TYPE = 'Dog'
 ORDER BY
     NAME;
