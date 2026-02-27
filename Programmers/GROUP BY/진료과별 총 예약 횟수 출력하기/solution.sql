@@ -1,0 +1,1 @@
+SELECT `MCDP_CD` '진료과코드',COUNT(*) '5월예약건수' FROM appointment GROUP BY MCDP_CD ORDER BY COUNT(*);
