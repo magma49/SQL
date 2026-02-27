@@ -1,10 +1,26 @@
-CREATE TABLE
-    IF NOT EXISTS (INTEGER NOT NULL, VARCHAR(255) NOT NULL);
+-- 1. 테이블 초기화 (항상 맨 앞에 추가)
+DROP TABLE IF EXISTS PRODUCT;
 
+-- 2. 상품 정보 테이블 생성 (PK 생략, 모두 NOT NULL)
+CREATE TABLE PRODUCT (
+    PRODUCT_ID INTEGER NOT NULL,
+    PRODUCT_CODE VARCHAR(8) NOT NULL,
+    PRICE INTEGER NOT NULL
+);
+
+-- 3. 데이터 삽입 (새로운 6개의 상품 데이터)
 INSERT INTO
+    PRODUCT (PRODUCT_ID, PRODUCT_CODE, PRICE)
 VALUES
-    ();
+    (1, 'A1000011', 10000),
+    (2, 'A1000045', 9000),
+    (3, 'C3000002', 22000),
+    (4, 'C3000006', 15000),
+    (5, 'C3000010', 30000),
+    (6, 'K1000023', 17000);
 
+-- 4. 삽입된 데이터 최종 확인
 SELECT
     *
-FROM;
+FROM
+    PRODUCT;
