@@ -1,10 +1,36 @@
-CREATE TABLE
-    IF NOT EXISTS (INTEGER NOT NULL, VARCHAR(255) NOT NULL);
+-- 1. 테이블 초기화 (항상 맨 앞에 추가)
+DROP TABLE IF EXISTS AIR_POLLUTION;
 
+-- 2. 미세먼지 정보 테이블 생성 (오타 무시하고 모두 NOT NULL 적용)
+CREATE TABLE AIR_POLLUTION (
+    LOCATION1 VARCHAR(50) NOT NULL,
+    LOCATION2 VARCHAR(50) NOT NULL,
+    YM DATE NOT NULL,
+    PM_VAL1 INTEGER NOT NULL,
+    PM_VAL2 INTEGER NOT NULL
+);
+
+-- 3. 데이터 삽입 (총 14건의 월별/지역별 데이터)
 INSERT INTO
+    AIR_POLLUTION (LOCATION1, LOCATION2, YM, PM_VAL1, PM_VAL2)
 VALUES
-    ();
+    ('경기도', '수원', '2018-01-01', 48, 27),
+    ('경기도', '수원', '2018-02-01', 51, 30),
+    ('경기도', '수원', '2018-03-01', 52, 21),
+    ('경기도', '수원', '2018-04-01', 52, 20),
+    ('경기도', '수원', '2018-05-01', 45, 19),
+    ('경기도', '수원', '2018-06-01', 39, 17),
+    ('경기도', '수원', '2018-07-01', 27, 15),
+    ('경기도', '수원', '2018-08-01', 26, 16),
+    ('경기도', '수원', '2018-09-01', 21, 12),
+    ('경기도', '수원', '2018-10-01', 31, 18),
+    ('경기도', '수원', '2018-11-01', 56, 21),
+    ('경기도', '수원', '2018-12-01', 44, 27),
+    ('서울시', '노원', '2018-11-01', 25, 45),
+    ('경기도', '용인', '2018-02-01', 14, 21);
 
+-- 4. 삽입된 데이터 최종 확인
 SELECT
     *
-FROM;
+FROM
+    AIR_POLLUTION;
