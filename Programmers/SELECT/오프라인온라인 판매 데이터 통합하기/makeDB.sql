@@ -1,0 +1,65 @@
+-- 1. 테이블 초기화 (항상 맨 앞에 추가)
+DROP TABLE IF EXISTS OFFLINE_SALE;
+
+DROP TABLE IF EXISTS ONLINE_SALE;
+
+-- 2. 온라인 상품 판매 테이블 생성 (모두 NOT NULL)
+CREATE TABLE ONLINE_SALE (
+    ONLINE_SALE_ID INTEGER NOT NULL,
+    USER_ID INTEGER NOT NULL,
+    PRODUCT_ID INTEGER NOT NULL,
+    SALES_AMOUNT INTEGER NOT NULL,
+    SALES_DATE DATE NOT NULL
+);
+
+-- 3. 오프라인 상품 판매 테이블 생성 (모두 NOT NULL)
+CREATE TABLE OFFLINE_SALE (
+    OFFLINE_SALE_ID INTEGER NOT NULL,
+    PRODUCT_ID INTEGER NOT NULL,
+    SALES_AMOUNT INTEGER NOT NULL,
+    SALES_DATE DATE NOT NULL
+);
+
+-- 4. 데이터 삽입 (ONLINE_SALE - 총 6건)
+INSERT INTO
+    ONLINE_SALE (
+        ONLINE_SALE_ID,
+        USER_ID,
+        PRODUCT_ID,
+        SALES_AMOUNT,
+        SALES_DATE
+    )
+VALUES
+    (1, 1, 3, 2, '2022-02-25'),
+    (2, 4, 4, 1, '2022-03-01'),
+    (4, 2, 2, 2, '2022-03-02'),
+    (3, 6, 3, 3, '2022-03-02'),
+    (5, 5, 5, 1, '2022-03-03'),
+    (6, 5, 7, 1, '2022-04-06');
+
+-- 5. 데이터 삽입 (OFFLINE_SALE - 총 6건)
+INSERT INTO
+    OFFLINE_SALE (
+        OFFLINE_SALE_ID,
+        PRODUCT_ID,
+        SALES_AMOUNT,
+        SALES_DATE
+    )
+VALUES
+    (1, 1, 2, '2022-02-21'),
+    (4, 1, 2, '2022-03-01'),
+    (3, 3, 3, '2022-03-01'),
+    (2, 4, 1, '2022-03-01'),
+    (5, 2, 1, '2022-03-03'),
+    (6, 2, 1, '2022-04-01');
+
+-- 6. 삽입된 데이터 최종 확인
+SELECT
+    *
+FROM
+    ONLINE_SALE;
+
+SELECT
+    *
+FROM
+    OFFLINE_SALE;
