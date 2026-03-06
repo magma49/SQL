@@ -1,0 +1,36 @@
+-- 1. 테이블 초기화 (항상 맨 앞에 추가)
+DROP TABLE IF EXISTS CAR_RENTAL_COMPANY_RENTAL_HISTORY;
+
+-- 2. 자동차 대여 기록 테이블 생성 (모든 컬럼 NOT NULL 반영)
+CREATE TABLE CAR_RENTAL_COMPANY_RENTAL_HISTORY (
+    HISTORY_ID INTEGER NOT NULL,
+    CAR_ID INTEGER NOT NULL,
+    START_DATE DATE NOT NULL,
+    END_DATE DATE NOT NULL
+);
+
+-- 3. 데이터 삽입 (15건의 상세 이력 반영)
+INSERT INTO
+    CAR_RENTAL_COMPANY_RENTAL_HISTORY (HISTORY_ID, CAR_ID, START_DATE, END_DATE)
+VALUES
+    (1, 1, '2022-07-27', '2022-08-02'),
+    (2, 1, '2022-08-03', '2022-08-04'),
+    (3, 2, '2022-08-05', '2022-08-05'),
+    (4, 2, '2022-08-09', '2022-08-12'),
+    (5, 3, '2022-09-16', '2022-10-15'),
+    (6, 1, '2022-08-24', '2022-08-30'),
+    (7, 3, '2022-10-16', '2022-10-19'),
+    (8, 1, '2022-09-03', '2022-09-07'),
+    (9, 1, '2022-09-18', '2022-09-19'),
+    (10, 2, '2022-09-08', '2022-09-10'),
+    (11, 2, '2022-10-16', '2022-10-19'),
+    (12, 1, '2022-09-29', '2022-10-06'),
+    (13, 2, '2022-10-30', '2022-11-01'),
+    (14, 2, '2022-11-05', '2022-11-05'),
+    (15, 3, '2022-11-11', '2022-11-11');
+
+-- 4. 삽입된 데이터 최종 확인
+SELECT
+    *
+FROM
+    CAR_RENTAL_COMPANY_RENTAL_HISTORY;
