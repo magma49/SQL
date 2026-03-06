@@ -1,0 +1,19 @@
+SELECT
+    F.ID,
+    N.FISH_NAME,
+    F.LENGTH
+FROM
+    FISH_INFO F
+    JOIN FISH_NAME_INFO N ON F.FISH_TYPE = N.FISH_TYPE
+    JOIN (
+        SELECT
+            FISH_TYPE,
+            MAX(LENGTH) LENGTH
+        FROM
+            FISH_INFO
+        GROUP BY
+            FISH_TYPE
+    ) M ON F.LENGTH = M.LENGTH
+    AND F.FISH_TYPE = M.FISH_TYPE
+ORDER BY
+    ID;
